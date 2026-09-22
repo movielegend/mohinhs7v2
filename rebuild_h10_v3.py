@@ -1,4 +1,4 @@
-"""Photo-guided H10 surface reconstruction. Units: millimetres internally.
+"""Photo-guided S7 PRO VERSION 2 surface reconstruction. Units: millimetres internally.
 Requires: numpy, trimesh, manifold3d. Nominal dimensions are not measured CAD.
 """
 import math,json,os
@@ -201,12 +201,15 @@ add('Stand tripod seat',disc(10,.6,(0,20.4,0),'y'),WHITE)
 add('Tripod underside insert',disc(6,.8,(0,0,0),'y',3),BRASS)
 for x in [-119,119]:add('Non slip rail',prism(9,57,4,1.2,'y',(x,-.3,0)),DARK)
 
-scene.metadata={'description':'H10 photo-guided reconstruction v3. Realistic PBR material pass. Nominal height 330 mm, not measured CAD. Real ventilation holes. Body pivot tilt -8 degrees.'}
+scene.metadata={'description':'S7 PRO VERSION 2 photo-guided reconstruction v3. Realistic PBR material pass. Nominal height 330 mm, not measured CAD. Real ventilation holes. Body pivot tilt -8 degrees.'}
+scene.export(OUT/'s7-pro-version-2.glb')
+scene.export(ROOT/'s7-pro-version-2.glb')
 scene.export(OUT/'h10-projector-v3.glb')
+scene.export(ROOT/'h10-projector-v3.glb')
 # Save geometry for deterministic renderer and QA.
 import pickle
 with open(OUT/'scene.pkl','wb') as f:pickle.dump(items,f)
-loaded=trimesh.load(OUT/'h10-projector-v3.glb',force='scene')
+loaded=trimesh.load(ROOT/'s7-pro-version-2.glb',force='scene')
 assert len(loaded.geometry)==len(items)
 assert np.isfinite(loaded.bounds).all()
 print('Exported',len(items),'objects;',sum(len(m.faces) for _,m,_ in items),'triangles; bounds',loaded.bounds.tolist(),flush=True)
