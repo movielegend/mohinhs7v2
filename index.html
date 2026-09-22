@@ -1103,39 +1103,76 @@ var nS=function(t,e,i,n){for(var r,s=arguments.length,a=s<3?e:null===n?n=Object.
       <path d="M 2 1.5 L 8.5 5 L 2 8.5 z" fill="#0f172a"/>
     </marker>
   </defs>
+  <!-- Height Lines Left & Right -->
   <line id="ext-h-1" class="cad-ext-line"/>
   <line id="ext-h-2" class="cad-ext-line"/>
   <line id="dim-line-h" class="cad-dim-line" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)"/>
+  
+  <!-- Width Lines Front & Rear -->
   <line id="ext-w-1" class="cad-ext-line"/>
   <line id="ext-w-2" class="cad-ext-line"/>
   <line id="dim-line-w" class="cad-dim-line" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)"/>
+  
+  <!-- Depth Lines Right & Left -->
   <line id="ext-d-1" class="cad-ext-line"/>
   <line id="ext-d-2" class="cad-ext-line"/>
   <line id="dim-line-d" class="cad-dim-line" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)"/>
+
+  <!-- Thickness Lines -->
   <line id="ext-t-1" class="cad-ext-line"/>
   <line id="ext-t-2" class="cad-ext-line"/>
   <line id="dim-line-t" class="cad-dim-line" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)"/>
 </svg>
-<div class="cad-anchor" slot="hotspot-h-bot" data-position="-0.16 0 0"></div>
-<div class="cad-anchor" slot="hotspot-h-top" data-position="-0.16 0.331 0"></div>
-<div class="cad-anchor" slot="hotspot-h-dim-bot" data-position="-0.21 0 0"></div>
-<div class="cad-anchor" slot="hotspot-h-dim-top" data-position="-0.21 0.331 0"></div>
-<div class="cad-label hide" slot="hotspot-h-label" data-position="-0.21 0.165 0">33.1 cm</div>
-<div class="cad-anchor" slot="hotspot-w-left" data-position="-0.16 0 0.133"></div>
-<div class="cad-anchor" slot="hotspot-w-right" data-position="0.16 0 0.133"></div>
-<div class="cad-anchor" slot="hotspot-w-dim-left" data-position="-0.16 0 0.19"></div>
-<div class="cad-anchor" slot="hotspot-w-dim-right" data-position="0.16 0 0.19"></div>
-<div class="cad-label hide" slot="hotspot-w-label" data-position="0 0 0.19">32.0 cm</div>
-<div class="cad-anchor" slot="hotspot-d-front" data-position="0.16 0 0.133"></div>
-<div class="cad-anchor" slot="hotspot-d-rear" data-position="0.16 0 -0.133"></div>
-<div class="cad-anchor" slot="hotspot-d-dim-front" data-position="0.22 0 0.133"></div>
-<div class="cad-anchor" slot="hotspot-d-dim-rear" data-position="0.22 0 -0.133"></div>
-<div class="cad-label hide" slot="hotspot-d-label" data-position="0.22 0 0">26.6 cm</div>
+
+<!-- Left Height Anchors -->
+<div class="cad-anchor" slot="hotspot-hl-bot" data-position="-0.16 0 0"></div>
+<div class="cad-anchor" slot="hotspot-hl-top" data-position="-0.16 0.331 0"></div>
+<div class="cad-anchor" slot="hotspot-hl-dim-bot" data-position="-0.21 0 0"></div>
+<div class="cad-anchor" slot="hotspot-hl-dim-top" data-position="-0.21 0.331 0"></div>
+<div id="cad-lbl-hl" class="cad-label hide" slot="hotspot-hl-label" data-position="-0.21 0.165 0">33.1 cm</div>
+
+<!-- Right Height Anchors -->
+<div class="cad-anchor" slot="hotspot-hr-bot" data-position="0.16 0 0"></div>
+<div class="cad-anchor" slot="hotspot-hr-top" data-position="0.16 0.331 0"></div>
+<div class="cad-anchor" slot="hotspot-hr-dim-bot" data-position="0.21 0 0"></div>
+<div class="cad-anchor" slot="hotspot-hr-dim-top" data-position="0.21 0.331 0"></div>
+<div id="cad-lbl-hr" class="cad-label hide" slot="hotspot-hr-label" data-position="0.21 0.165 0">33.1 cm</div>
+
+<!-- Front Width Anchors -->
+<div class="cad-anchor" slot="hotspot-wf-left" data-position="-0.16 0 0.133"></div>
+<div class="cad-anchor" slot="hotspot-wf-right" data-position="0.16 0 0.133"></div>
+<div class="cad-anchor" slot="hotspot-wf-dim-left" data-position="-0.16 0 0.19"></div>
+<div class="cad-anchor" slot="hotspot-wf-dim-right" data-position="0.16 0 0.19"></div>
+<div id="cad-lbl-wf" class="cad-label hide" slot="hotspot-wf-label" data-position="0 0 0.19">32.0 cm</div>
+
+<!-- Rear Width Anchors -->
+<div class="cad-anchor" slot="hotspot-wr-left" data-position="-0.16 0 -0.133"></div>
+<div class="cad-anchor" slot="hotspot-wr-right" data-position="0.16 0 -0.133"></div>
+<div class="cad-anchor" slot="hotspot-wr-dim-left" data-position="-0.16 0 -0.19"></div>
+<div class="cad-anchor" slot="hotspot-wr-dim-right" data-position="0.16 0 -0.19"></div>
+<div id="cad-lbl-wr" class="cad-label hide" slot="hotspot-wr-label" data-position="0 0 -0.19">32.0 cm</div>
+
+<!-- Right Depth Anchors -->
+<div class="cad-anchor" slot="hotspot-dr-front" data-position="0.16 0 0.133"></div>
+<div class="cad-anchor" slot="hotspot-dr-rear" data-position="0.16 0 -0.133"></div>
+<div class="cad-anchor" slot="hotspot-dr-dim-front" data-position="0.22 0 0.133"></div>
+<div class="cad-anchor" slot="hotspot-dr-dim-rear" data-position="0.22 0 -0.133"></div>
+<div id="cad-lbl-dr" class="cad-label hide" slot="hotspot-dr-label" data-position="0.22 0 0">26.6 cm</div>
+
+<!-- Left Depth Anchors -->
+<div class="cad-anchor" slot="hotspot-dl-front" data-position="-0.16 0 0.133"></div>
+<div class="cad-anchor" slot="hotspot-dl-rear" data-position="-0.16 0 -0.133"></div>
+<div class="cad-anchor" slot="hotspot-dl-dim-front" data-position="-0.22 0 0.133"></div>
+<div class="cad-anchor" slot="hotspot-dl-dim-rear" data-position="-0.22 0 -0.133"></div>
+<div id="cad-lbl-dl" class="cad-label hide" slot="hotspot-dl-label" data-position="-0.22 0 0">26.6 cm</div>
+
+<!-- Thickness Anchors -->
 <div class="cad-anchor" slot="hotspot-t-front" data-position="0 0.28 0.052"></div>
 <div class="cad-anchor" slot="hotspot-t-rear" data-position="0 0.28 -0.052"></div>
 <div class="cad-anchor" slot="hotspot-t-dim-front" data-position="0 0.34 0.052"></div>
 <div class="cad-anchor" slot="hotspot-t-dim-rear" data-position="0 0.34 -0.052"></div>
-<div class="cad-label hide" slot="hotspot-t-label" data-position="0 0.34 0">10.4 cm</div>
+<div id="cad-lbl-t" class="cad-label hide" slot="hotspot-t-label" data-position="0 0.34 0">10.4 cm</div>
+
 <div id="dim-card" class="dim-card hide"><h4>📏 Kích thước kỹ thuật (cm)</h4><ul><li><span>Rộng tổng thể (ngang):</span><strong>32.0 cm</strong></li><li><span>Cao tổng thể (đứng):</span><strong>33.1 cm</strong></li><li><span>Sâu tổng thể (nghiêng):</span><strong>26.6 cm</strong></li><li><span>Thân máy chính:</span><strong>30.2 × 24.9 × 10.4 cm</strong></li></ul></div></model-viewer>
 <p id="status" role="status">Đang tải mô hình…</p><nav><button data-orbit="0deg 90deg 0.95m">Mặt trước</button><button data-orbit="28deg 82deg 0.95m" class="active">Góc ¾</button><button data-orbit="90deg 90deg 0.95m">Mặt bên</button><button data-orbit="180deg 82deg 0.95m">Mặt sau</button><button id="spin">Tự xoay</button><button id="toggle-dim">📏 Kích thước (cm)</button></nav>
 <footer>Tái dựng ngoại hình theo ảnh tham chiếu. Chiều cao quy ước 330 mm, chưa phải kích thước thực. Các chi tiết bên trong được giản lược; không phải bản CAD sản xuất.</footer>
@@ -1147,12 +1184,20 @@ document.getElementById('spin').onclick=e=>{model.autoRotate=!model.autoRotate;e
 
 const toggleDimBtn=document.getElementById('toggle-dim');
 const cadSvg=document.getElementById('cad-svg');
-const cadLabels=document.querySelectorAll('.cad-label');
 const dimCard=document.getElementById('dim-card');
 let showDims=false;
 
 function updateCADLines(){
   if(!showDims)return;
+
+  // Compute camera direction to handle real 3D occlusion
+  const orbit=model.getCameraOrbit();
+  const theta=orbit.theta; // azimuth
+  const phi=orbit.phi;     // polar
+  const camX=Math.sin(theta)*Math.sin(phi);
+  const camY=Math.cos(phi);
+  const camZ=Math.cos(theta)*Math.sin(phi);
+
   function setLine(lineId,p1,p2,overshoot=0){
     const el=document.getElementById(lineId);
     if(!el)return;
@@ -1170,37 +1215,106 @@ function updateCADLines(){
     el.setAttribute('x2',x2);el.setAttribute('y2',y2);
     el.setAttribute('visibility','visible');
   }
-  const h_bot=model.queryHotspot('hotspot-h-bot');
-  const h_top=model.queryHotspot('hotspot-h-top');
-  const h_dim_bot=model.queryHotspot('hotspot-h-dim-bot');
-  const h_dim_top=model.queryHotspot('hotspot-h-dim-top');
-  setLine('ext-h-1',h_bot,h_dim_bot,10);
-  setLine('ext-h-2',h_top,h_dim_top,10);
-  setLine('dim-line-h',h_dim_bot,h_dim_top);
 
-  const w_left=model.queryHotspot('hotspot-w-left');
-  const w_right=model.queryHotspot('hotspot-w-right');
-  const w_dim_left=model.queryHotspot('hotspot-w-dim-left');
-  const w_dim_right=model.queryHotspot('hotspot-w-dim-right');
-  setLine('ext-w-1',w_left,w_dim_left,10);
-  setLine('ext-w-2',w_right,w_dim_right,10);
-  setLine('dim-line-w',w_dim_left,w_dim_right);
+  function hideLine(lineId){
+    const el=document.getElementById(lineId);
+    if(el)el.setAttribute('visibility','hidden');
+  }
 
-  const d_front=model.queryHotspot('hotspot-d-front');
-  const d_rear=model.queryHotspot('hotspot-d-rear');
-  const d_dim_front=model.queryHotspot('hotspot-d-dim-front');
-  const d_dim_rear=model.queryHotspot('hotspot-d-dim-rear');
-  setLine('ext-d-1',d_front,d_dim_front,10);
-  setLine('ext-d-2',d_rear,d_dim_rear,10);
-  setLine('dim-line-d',d_dim_front,d_dim_rear);
+  function toggleLabel(id,show){
+    const el=document.getElementById(id);
+    if(el)el.classList.toggle('hide',!show||!showDims);
+  }
 
-  const t_front=model.queryHotspot('hotspot-t-front');
-  const t_rear=model.queryHotspot('hotspot-t-rear');
-  const t_dim_front=model.queryHotspot('hotspot-t-dim-front');
-  const t_dim_rear=model.queryHotspot('hotspot-t-dim-rear');
-  setLine('ext-t-1',t_front,t_dim_front,10);
-  setLine('ext-t-2',t_rear,t_dim_rear,10);
-  setLine('dim-line-t',t_dim_front,t_dim_rear);
+  // 1. HEIGHT DIMENSION (33.1 cm) - Dynamic Left or Right silhouette
+  const useLeftHeight=(camX<=0);
+  if(useLeftHeight){
+    const h_bot=model.queryHotspot('hotspot-hl-bot');
+    const h_top=model.queryHotspot('hotspot-hl-top');
+    const h_dim_bot=model.queryHotspot('hotspot-hl-dim-bot');
+    const h_dim_top=model.queryHotspot('hotspot-hl-dim-top');
+    setLine('ext-h-1',h_bot,h_dim_bot,10);
+    setLine('ext-h-2',h_top,h_dim_top,10);
+    setLine('dim-line-h',h_dim_bot,h_dim_top);
+    toggleLabel('cad-lbl-hl',true);
+    toggleLabel('cad-lbl-hr',false);
+  }else{
+    const h_bot=model.queryHotspot('hotspot-hr-bot');
+    const h_top=model.queryHotspot('hotspot-hr-top');
+    const h_dim_bot=model.queryHotspot('hotspot-hr-dim-bot');
+    const h_dim_top=model.queryHotspot('hotspot-hr-dim-top');
+    setLine('ext-h-1',h_bot,h_dim_bot,10);
+    setLine('ext-h-2',h_top,h_dim_top,10);
+    setLine('dim-line-h',h_dim_bot,h_dim_top);
+    toggleLabel('cad-lbl-hl',false);
+    toggleLabel('cad-lbl-hr',true);
+  }
+
+  // 2. WIDTH DIMENSION (32.0 cm) - Occlusion Front vs Rear
+  const useFrontWidth=(camZ>=0);
+  if(useFrontWidth){
+    const w_left=model.queryHotspot('hotspot-wf-left');
+    const w_right=model.queryHotspot('hotspot-wf-right');
+    const w_dim_left=model.queryHotspot('hotspot-wf-dim-left');
+    const w_dim_right=model.queryHotspot('hotspot-wf-dim-right');
+    setLine('ext-w-1',w_left,w_dim_left,10);
+    setLine('ext-w-2',w_right,w_dim_right,10);
+    setLine('dim-line-w',w_dim_left,w_dim_right);
+    toggleLabel('cad-lbl-wf',true);
+    toggleLabel('cad-lbl-wr',false);
+  }else{
+    const w_left=model.queryHotspot('hotspot-wr-left');
+    const w_right=model.queryHotspot('hotspot-wr-right');
+    const w_dim_left=model.queryHotspot('hotspot-wr-dim-left');
+    const w_dim_right=model.queryHotspot('hotspot-wr-dim-right');
+    setLine('ext-w-1',w_left,w_dim_left,10);
+    setLine('ext-w-2',w_right,w_dim_right,10);
+    setLine('dim-line-w',w_dim_left,w_dim_right);
+    toggleLabel('cad-lbl-wf',false);
+    toggleLabel('cad-lbl-wr',true);
+  }
+
+  // 3. DEPTH DIMENSION (26.6 cm) - Occlusion Right vs Left
+  const useRightDepth=(camX>=0);
+  if(useRightDepth){
+    const d_front=model.queryHotspot('hotspot-dr-front');
+    const d_rear=model.queryHotspot('hotspot-dr-rear');
+    const d_dim_front=model.queryHotspot('hotspot-dr-dim-front');
+    const d_dim_rear=model.queryHotspot('hotspot-dr-dim-rear');
+    setLine('ext-d-1',d_front,d_dim_front,10);
+    setLine('ext-d-2',d_rear,d_dim_rear,10);
+    setLine('dim-line-d',d_dim_front,d_dim_rear);
+    toggleLabel('cad-lbl-dr',true);
+    toggleLabel('cad-lbl-dl',false);
+  }else{
+    const d_front=model.queryHotspot('hotspot-dl-front');
+    const d_rear=model.queryHotspot('hotspot-dl-rear');
+    const d_dim_front=model.queryHotspot('hotspot-dl-dim-front');
+    const d_dim_rear=model.queryHotspot('hotspot-dl-dim-rear');
+    setLine('ext-d-1',d_front,d_dim_front,10);
+    setLine('ext-d-2',d_rear,d_dim_rear,10);
+    setLine('dim-line-d',d_dim_front,d_dim_rear);
+    toggleLabel('cad-lbl-dr',false);
+    toggleLabel('cad-lbl-dl',true);
+  }
+
+  // 4. THICKNESS DIMENSION (10.4 cm) - Occlusion when looking from bottom / back
+  const showThickness=(camY>0.1&&camZ>-0.25);
+  if(showThickness){
+    const t_front=model.queryHotspot('hotspot-t-front');
+    const t_rear=model.queryHotspot('hotspot-t-rear');
+    const t_dim_front=model.queryHotspot('hotspot-t-dim-front');
+    const t_dim_rear=model.queryHotspot('hotspot-t-dim-rear');
+    setLine('ext-t-1',t_front,t_dim_front,10);
+    setLine('ext-t-2',t_rear,t_dim_rear,10);
+    setLine('dim-line-t',t_dim_front,t_dim_rear);
+    toggleLabel('cad-lbl-t',true);
+  }else{
+    hideLine('ext-t-1');
+    hideLine('ext-t-2');
+    hideLine('dim-line-t');
+    toggleLabel('cad-lbl-t',false);
+  }
 }
 
 model.addEventListener('camera-change',updateCADLines);
@@ -1214,7 +1328,10 @@ toggleDimBtn.onclick=()=>{
   showDims=!showDims;
   toggleDimBtn.classList.toggle('active',showDims);
   if(cadSvg)cadSvg.classList.toggle('hide',!showDims);
-  cadLabels.forEach(el=>el.classList.toggle('hide',!showDims));
   if(dimCard)dimCard.classList.toggle('hide',!showDims);
-  if(showDims)updateCADLines();
+  if(!showDims){
+    document.querySelectorAll('.cad-label').forEach(el=>el.classList.add('hide'));
+  }else{
+    updateCADLines();
+  }
 };</script></body></html>
